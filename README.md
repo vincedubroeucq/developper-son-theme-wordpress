@@ -1,5 +1,5 @@
 # Développer son thème WordPress - Ressources
 
-This repo contains source code for the course "Développer son thème WordPress"
+Ce dépôt contient les ressources nécessaires pour suivre la formation "Développer son thème WordPress".
 
-You'll find the starting prototype, and theme code at every major step of the process.
+Vous y trouverez le prototype HTML utilisé comme modèle ainsi que le thème terminé, et les autres supports (slides, etc...) utilisés lors des différentes vidéos de la formation.
