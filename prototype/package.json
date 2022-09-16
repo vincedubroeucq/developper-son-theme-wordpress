@@ -1,12 +1,24 @@
 {
-  "name": "prototype",
+  "name": "voyager-prototype",
   "version": "1.0.0",
-  "description": "",
+  "description": "HTML prototype to build the Voyager WordPress theme",
   "main": "index.js",
   "scripts": {
-    "start": "sass --watch sass/style.scss:style.css",
+    "start" : "sass --watch sass/style.scss:style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincedubroeucq/developper-son-theme-wordpress.git"
+  },
+  "keywords": [
+    "theme",
+    "WordPress"
+  ],
+  "author": "Vincent Dubroeucq",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/vincedubroeucq/developper-son-theme-wordpress/issues"
+  },
+  "homepage": "https://github.com/vincedubroeucq/developper-son-theme-wordpress#readme"
 }
