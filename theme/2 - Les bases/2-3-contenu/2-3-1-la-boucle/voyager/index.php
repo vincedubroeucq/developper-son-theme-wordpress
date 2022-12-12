@@ -4,8 +4,7 @@
  * Used to display the list of posts.
  */
 
-get_header(); 
-?>
+get_header(); ?>
 
 <main class="site-main">
 	<div class="wrapper main-wrapper maxw-xxl mx-auto py-7">

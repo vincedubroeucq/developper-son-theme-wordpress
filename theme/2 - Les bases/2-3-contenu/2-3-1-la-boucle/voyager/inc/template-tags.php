@@ -13,7 +13,7 @@ function voyager_header_image(){
     if( $image ) {
         $html = sprintf( '<div class="header-image-container absolute cover">%s</div>', $image );
     }
-    $html = apply_filters( 'voyager_header_image', $html );
+    $html = apply_filters( 'voyager_header_image', $html, $image );
     echo $html;
 }
 endif;
@@ -30,7 +30,7 @@ function voyager_hero_title(){
         $title = get_bloginfo( 'name' );
     }
     $html = ! empty( $title ) ? sprintf( '<h1 class="page-title mt-0">%s</h1>', wp_kses_post( $title ) ) : ''; 
-    $html = apply_filters( 'voyager_hero_title', $html );
+    $html = apply_filters( 'voyager_hero_title', $html, $title );
     echo $html;   
 }
 endif;
