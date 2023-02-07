@@ -18,7 +18,7 @@ add_filter( 'nav_menu_css_class', 'voyager_nav_menu_item_classes', 10, 4 );
 function voyager_nav_menu_item_classes( $classes, $menu_item, $args, $depth ){
     switch ( $args->theme_location ) {
         case 'menu-1':
-            $classes[] = 'my-5 flex align-center';
+            $classes[] = 'my-5';
             break;
         case 'menu-2':
             $classes[] = 'ml-2 mb-0 flex align-center';
