@@ -10,14 +10,12 @@ if( ! function_exists( 'voyager_header_image' ) ) :
  * @param   bool    $echo  Whether to echo html or just return it
  * @return  string  $html 
  */
-function voyager_header_image( $echo = true ){
+ function voyager_header_image( $echo = true ){
     $html  = '';
-
-    $image = get_header_image_tag( array( 'class' => 'header-image' ) );
+    $image = get_header_image_tag( array( 'class' => 'header-image' ));
     if( is_singular() && has_post_thumbnail() ){
-        $image = get_the_post_thumbnail( null, '2048x2048', [ 'class' => 'header-image' ] );
+        $image = get_the_post_thumbnail( null, '2048x2048', array( 'class' => 'header-image' ) );
     }
-
     if( $image ) {
         $html = sprintf( '<div id="wp-custom-header" class="header-image-container absolute cover">%s</div>', $image );
         if ( is_header_video_active() && ( has_header_video() || is_customize_preview() ) ) {
@@ -25,7 +23,6 @@ function voyager_header_image( $echo = true ){
             wp_localize_script( 'wp-custom-header', '_wpCustomHeaderSettings', get_header_video_settings() );
         }
     }
-
     $html = apply_filters( 'voyager_header_image', $html, $image );
     if( $echo ) echo $html;
     return $html;
@@ -41,8 +38,11 @@ if( ! function_exists( 'voyager_hero_title' ) ) :
  * @return  string  $html 
  */
 function voyager_hero_title( $echo = true ){
-    $html  = '';
+    $html = '';
     $title = single_post_title( '', false );
+    if( is_front_page() ){
+        $title = get_bloginfo( 'name' );
+    }
     if( is_404() ){
         $title = __( 'Not found !', 'voyager' );
     }
@@ -52,9 +52,6 @@ function voyager_hero_title( $echo = true ){
     if( is_search() ){
         /* translators: %s Search query */
         $title = sprintf( esc_html__( 'Search Results for: %s', 'voyager' ), '<span>' . get_search_query() . '</span>' );
-    }
-    if( is_front_page() ){
-        $title = get_bloginfo( 'name' );
     }
     $html = ! empty( $title ) ? sprintf( '<h1 class="page-title mt-0">%s</h1>', wp_kses_post( $title ) ) : ''; 
     $html = apply_filters( 'voyager_hero_title', $html, $title );
@@ -72,7 +69,7 @@ if( ! function_exists( 'voyager_hero_description' ) ) :
  * @return  string  $html 
  */
 function voyager_hero_description( $echo = true ){
-    $html  = '';
+    $html = '';
     $description = '';
     if( is_single() ){
         $description = voyager_post_meta( false );
@@ -80,7 +77,7 @@ function voyager_hero_description( $echo = true ){
     if( is_archive() ){
         $description = get_the_archive_description();
     }
-    if( is_front_page() && is_home() ){
+    if( is_front_page() ){
         $description = get_bloginfo( 'description' );
     }
     $html = ! empty( $description ) ? sprintf( '<div class="page-description">%s</div>', wp_kses_post( $description ) ) : ''; 
@@ -125,7 +122,9 @@ function voyager_post_meta( $echo = true ){
     $meta = apply_filters( 'voyager_post_meta', $meta );
     $html = ! empty( $meta ) ? sprintf( '<div class="post-meta uppercase txt-2">%s</div>', join( '<span class="seperator mx-1">|</span>', $meta ) ) : '';
     $html = apply_filters( 'voyager_post_meta_html', $html );
-    if( $echo ) echo $html;
+    if( $echo ) {
+        echo $html;
+    }
     return $html;
 }
 endif;

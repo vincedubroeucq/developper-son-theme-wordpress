@@ -1,9 +1,7 @@
 <?php 
 /**
- * Singular views template file.
- * Used to display a single post or page.
+ * Used to display the single posts and pages
  */
-
 get_header(); ?>
 
 <main class="site-main">

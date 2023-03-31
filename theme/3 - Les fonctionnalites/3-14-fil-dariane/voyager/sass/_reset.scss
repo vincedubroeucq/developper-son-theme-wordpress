@@ -20,8 +20,8 @@ body {
 
 img, picture, video, canvas, svg {
     display: block;
-	height: auto;
     max-width: 100%;
+	height: auto;
 }
 
 input, button, textarea, select {
@@ -30,9 +30,4 @@ input, button, textarea, select {
 
 p, h1, h2, h3, h4, h5, h6 {
 	overflow-wrap: break-word;
-}
-
-iframe {
-	max-height: 100%;
-	max-width: 100%;
 }

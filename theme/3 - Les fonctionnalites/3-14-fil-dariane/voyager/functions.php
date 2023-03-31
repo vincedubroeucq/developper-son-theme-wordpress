@@ -10,8 +10,8 @@ add_action( 'wp_enqueue_scripts', 'voyager_scripts' );
  */
 function voyager_scripts() {
     $version = wp_get_theme()->get( 'Version' );
-    wp_enqueue_style( 'voyager-style', get_stylesheet_uri(), [], $version );
-    wp_enqueue_script( 'voyager-navigation', get_template_directory_uri() . '/js/navigation.js', [], $version, false );
+    wp_enqueue_style( 'voyager-style', get_stylesheet_uri(), array(), $version );
+    wp_enqueue_script( 'voyager-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $version, false );
 }
 
 
@@ -23,25 +23,20 @@ function voyager_setup(){
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'custom-header', array(
-        'width'  => 2048,
-        'height' => 800,
-        'flex-height'  => true,
-        'flex-width'   => true,
-        'header-text'  => false,
-        'default-text-color' => 'abc',
+        'width'       => 2048,
+        'height'      => 800,
+        'flex-width'  => true,
+        'flex-height' => true,
+        'default-text-color' => 'e0e0e0',
         'wp-head-callback'   => 'voyager_header_style',
-        'video'                 => true,
-        'video-active-callback' => 'is_front_page',
     ) );
-
     add_theme_support( 'custom-logo', array(
         'height'      => 50,
         'width'       => 250,
         'flex-width'  => true,
-        'header-text' => array( 'site-title-block' ),
         'unlink-homepage-logo' => true,
     ) );
-
+   
     // Menus
     register_nav_menus(
         array(
@@ -71,8 +66,12 @@ function voyager_widgets_init() {
 	);
 }
 
-// Load custom template tags
-include 'inc/template-tags.php';
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
 
-// Load useful functions
-include 'inc/template-functions.php';
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
