@@ -6,6 +6,7 @@
     grid-gap: $sp-4;
     @media screen and (min-width: $md){
         grid-template-columns: repeat( auto-fill, minmax( 400px, 1fr ) );
+        justify-items: center;
     }
 }
 
