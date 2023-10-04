@@ -1,0 +1,19 @@
+{
+  "name": "voyager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch sass/style.scss:style.css sass/editor-style.scss:editor-style.css",
+    "build": "npm run sass && npm run terser && npm run make-pot",
+    "sass": "sass --style=compressed sass/style.scss:style.min.css sass/editor-style.scss:editor-style.min.css",
+    "terser": "terser js/navigation.js --output js/navigation.min.js",
+    "make-pot": "wp i18n make-pot . languages/voyager.pot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vincent Dubroeucq",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "terser": "^5.21.0"
+  }
+}
