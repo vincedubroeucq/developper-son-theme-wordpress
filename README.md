@@ -9,6 +9,3 @@ Dans le dossier `theme/`, vous trouverez le thème à différentes étapes de la
 Si vous avez la moindre questions, n'hésitez pas à me contacter ! vincent@vincentdubroeucq.com
 
 Merci !
-
-
-

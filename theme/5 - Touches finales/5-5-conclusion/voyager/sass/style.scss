@@ -1,0 +1,29 @@
+/*!
+Theme Name: Voyager
+Theme URI: http://vincentdubroeucq.com/themes/voyager/
+Author: Vincent Dubroeucq
+Author URI: https://vincentdubroeucq.com
+Description: Theme used for "Développer Son Thème WordPress" course
+Version: 1.0.0
+Tested up to: 6.3
+Requires PHP: 7.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: voyager
+Domain Path: /languages
+Tags: grid-layout, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, featured-image-header, footer-widgets, theme-options, block-styles, wide-blocks
+*/
+
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'base';
+@import 'utilities';
+@import 'alignments';
+@import 'blocks';
+@import 'header';
+@import 'content';
+@import 'comments';
+@import 'footer';
+@import 'widgets';
+@import 'plugins';
